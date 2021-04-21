@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 The Basics of Data Analysis | Stata and Paste?</title>
+  <meta name="description" content="Chapter 4 The Basics of Data Analysis | Stata and Paste?" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 The Basics of Data Analysis | Stata and Paste?" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 The Basics of Data Analysis | Stata and Paste?" />
+  
+  
+  
+
+<meta name="author" content="Edgar Treischl" />
+
+
+<meta name="date" content="2021-04-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-preparation.html"/>
+<link rel="next" href="linear-regression.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+div.sourceCode
+  { color: #1f1c1b; background-color: #ffffff; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/stylePR.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html">Stata and Paste</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>2</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-basics.html"><a href="the-basics.html#use-and-describe"><i class="fa fa-check"></i><b>2.1</b> <em>use</em> and <em>describe</em></a></li>
+<li class="chapter" data-level="2.2" data-path="the-basics.html"><a href="the-basics.html#sysuse"><i class="fa fa-check"></i><b>2.2</b> <em>(sys)use</em></a></li>
+<li class="chapter" data-level="2.3" data-path="the-basics.html"><a href="the-basics.html#list"><i class="fa fa-check"></i><b>2.3</b> list</a></li>
+<li class="chapter" data-level="2.4" data-path="the-basics.html"><a href="the-basics.html#order"><i class="fa fa-check"></i><b>2.4</b> order</a></li>
+<li class="chapter" data-level="2.5" data-path="the-basics.html"><a href="the-basics.html#tab"><i class="fa fa-check"></i><b>2.5</b> <em>tab</em></a></li>
+<li class="chapter" data-level="2.6" data-path="the-basics.html"><a href="the-basics.html#ados-installieren"><i class="fa fa-check"></i><b>2.6</b> Ados installieren</a></li>
+<li class="chapter" data-level="2.7" data-path="the-basics.html"><a href="the-basics.html#pfad-angebenfinden"><i class="fa fa-check"></i><b>2.7</b> Pfad angeben/finden</a></li>
+<li class="chapter" data-level="2.8" data-path="the-basics.html"><a href="the-basics.html#display-keep-save-edit"><i class="fa fa-check"></i><b>2.8</b> <em>display</em>, <em>keep</em>, <em>save</em>, <em>edit</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-preparation.html"><a href="data-preparation.html"><i class="fa fa-check"></i><b>3</b> Data Preparation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-preparation.html"><a href="data-preparation.html#recode"><i class="fa fa-check"></i><b>3.1</b> <em>recode</em></a></li>
+<li class="chapter" data-level="3.2" data-path="data-preparation.html"><a href="data-preparation.html#generate-und-replace"><i class="fa fa-check"></i><b>3.2</b> <em>generate</em> und <em>replace</em></a></li>
+<li class="chapter" data-level="3.3" data-path="data-preparation.html"><a href="data-preparation.html#egen"><i class="fa fa-check"></i><b>3.3</b> <em>egen</em></a></li>
+<li class="chapter" data-level="3.4" data-path="data-preparation.html"><a href="data-preparation.html#label"><i class="fa fa-check"></i><b>3.4</b> <em>label</em></a></li>
+<li class="chapter" data-level="3.5" data-path="data-preparation.html"><a href="data-preparation.html#mathematische-transformationen"><i class="fa fa-check"></i><b>3.5</b> Mathematische Transformationen</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html"><i class="fa fa-check"></i><b>4</b> The Basics of Data Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html#summarize"><i class="fa fa-check"></i><b>4.1</b> <em>summarize</em></a></li>
+<li class="chapter" data-level="4.2" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html#correlation"><i class="fa fa-check"></i><b>4.2</b> <em>correlation</em></a></li>
+<li class="chapter" data-level="4.3" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html#t-test"><i class="fa fa-check"></i><b>4.3</b> t-test</a></li>
+<li class="chapter" data-level="4.4" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html#missing-values"><i class="fa fa-check"></i><b>4.4</b> <em>missing values</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>5</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="linear-regression.html"><a href="linear-regression.html#regress"><i class="fa fa-check"></i><b>5.1</b> regress</a></li>
+<li class="chapter" data-level="5.2" data-path="linear-regression.html"><a href="linear-regression.html#vorhersagen-per-hand"><i class="fa fa-check"></i><b>5.2</b> Vorhersagen per Hand</a></li>
+<li class="chapter" data-level="5.3" data-path="linear-regression.html"><a href="linear-regression.html#esttab"><i class="fa fa-check"></i><b>5.3</b> esttab</a></li>
+<li class="chapter" data-level="5.4" data-path="linear-regression.html"><a href="linear-regression.html#coefplot"><i class="fa fa-check"></i><b>5.4</b> coefplot</a></li>
+<li class="chapter" data-level="5.5" data-path="linear-regression.html"><a href="linear-regression.html#interaktionen"><i class="fa fa-check"></i><b>5.5</b> Interaktionen (##)</a></li>
+<li class="chapter" data-level="5.6" data-path="linear-regression.html"><a href="linear-regression.html#log-modelle-lin-log"><i class="fa fa-check"></i><b>5.6</b> Log Modelle: Lin-Log</a></li>
+<li class="chapter" data-level="5.7" data-path="linear-regression.html"><a href="linear-regression.html#log-lin"><i class="fa fa-check"></i><b>5.7</b> Log-Lin</a></li>
+<li class="chapter" data-level="5.8" data-path="linear-regression.html"><a href="linear-regression.html#log-log"><i class="fa fa-check"></i><b>5.8</b> Log-Log</a></li>
+<li class="chapter" data-level="5.9" data-path="linear-regression.html"><a href="linear-regression.html#optionen-robust"><i class="fa fa-check"></i><b>5.9</b> Optionen: robust</a></li>
+<li class="chapter" data-level="5.10" data-path="linear-regression.html"><a href="linear-regression.html#esample"><i class="fa fa-check"></i><b>5.10</b> e(sample)</a></li>
+<li class="chapter" data-level="5.11" data-path="linear-regression.html"><a href="linear-regression.html#ereturn-list"><i class="fa fa-check"></i><b>5.11</b> ereturn list</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="logistische-regression.html"><a href="logistische-regression.html"><i class="fa fa-check"></i><b>6</b> Logistische Regression</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="logistische-regression.html"><a href="logistische-regression.html#logit"><i class="fa fa-check"></i><b>6.1</b> logit</a></li>
+<li class="chapter" data-level="6.2" data-path="logistische-regression.html"><a href="logistische-regression.html#or"><i class="fa fa-check"></i><b>6.2</b> or</a></li>
+<li class="chapter" data-level="6.3" data-path="logistische-regression.html"><a href="logistische-regression.html#or-per-kreutabelle-berechnen"><i class="fa fa-check"></i><b>6.3</b> OR per Kreutabelle berechnen</a></li>
+<li class="chapter" data-level="6.4" data-path="logistische-regression.html"><a href="logistische-regression.html#margins"><i class="fa fa-check"></i><b>6.4</b> margins</a></li>
+<li class="chapter" data-level="6.5" data-path="logistische-regression.html"><a href="logistische-regression.html#lrtest"><i class="fa fa-check"></i><b>6.5</b> lrtest</a></li>
+<li class="chapter" data-level="6.6" data-path="logistische-regression.html"><a href="logistische-regression.html#fitstat"><i class="fa fa-check"></i><b>6.6</b> fitstat</a></li>
+<li class="chapter" data-level="6.7" data-path="logistische-regression.html"><a href="logistische-regression.html#classification"><i class="fa fa-check"></i><b>6.7</b> classification</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualisierungen.html"><a href="visualisierungen.html"><i class="fa fa-check"></i><b>7</b> Visualisierungen</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#histogramm"><i class="fa fa-check"></i>Histogramm</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#gladder"><i class="fa fa-check"></i>Gladder</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#box-plot"><i class="fa fa-check"></i>Box-Plot</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#bar-graph"><i class="fa fa-check"></i>Bar graph</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#ci-bar"><i class="fa fa-check"></i>CI Bar</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#scatter-plot"><i class="fa fa-check"></i>Scatter plot</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#many-more-options"><i class="fa fa-check"></i>Many more options</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="coefplot-1.html"><a href="coefplot-1.html"><i class="fa fa-check"></i><b>8</b> Coefplot</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="coefplot-1.html"><a href="coefplot-1.html#sort-and-order"><i class="fa fa-check"></i><b>8.1</b> Sort and order</a></li>
+<li class="chapter" data-level="8.2" data-path="coefplot-1.html"><a href="coefplot-1.html#modellvergleiche"><i class="fa fa-check"></i><b>8.2</b> Modellvergleiche</a></li>
+<li class="chapter" data-level="8.3" data-path="coefplot-1.html"><a href="coefplot-1.html#further-ado"><i class="fa fa-check"></i><b>8.3</b> Further ado</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stata and Paste?</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-basics-of-data-analysis" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> The Basics of Data Analysis</h1>
+<div id="summarize" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> <em>summarize</em></h2>
+<ul>
+<li>Der Befehl <em>summarize</em> berechnet statistische Maße (Mean, etc.)</li>
+<li>Mit der Option <em>detail</em> werden alle Streuungsmaße ausgegeben</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb33-1"><a href="the-basics-of-data-analysis.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
+<span id="cb33-2"><a href="the-basics-of-data-analysis.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">summarize</span> mpg, <span class="kw">detail</span></span></code></pre></div>
+<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
+
+
+(1978 Automobile Data)
+
+                        Mileage (mpg)
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%           12             12
+ 5%           14             12
+10%           14             14       Obs                  74
+25%           18             14       Sum of Wgt.          74
+
+50%           20                      Mean            21.2973
+                        Largest       Std. Dev.      5.785503
+75%           25             34
+90%           29             35       Variance       33.47205
+95%           34             35       Skewness       .9487176
+99%           41             41       Kurtosis       3.975005</code></pre>
+</div>
+<div id="correlation" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> <em>correlation</em></h2>
+<ul>
+<li>Ist das Gewicht eines Autos mit dem Verbrauch assoziiert?</li>
+<li><em>pwcorr</em> berechnet einen Korrelationskoeffizient</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb35-1"><a href="the-basics-of-data-analysis.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pwcorr</span> mpg <span class="kw">weight</span> , sig <span class="kw">star</span>(.05) <span class="co">// Korrelation auf dem 5%-Niveau signifikant </span></span></code></pre></div>
+<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
+
+             |      mpg   weight
+-------------+------------------
+         mpg |   1.0000 
+             |
+             |
+      weight |  -0.8072*  1.0000 
+             |   0.0000
+             |</code></pre>
+<p>Option <em>covariance</em> gibt die Kovarianz aus</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb37-1"><a href="the-basics-of-data-analysis.html#cb37-1" aria-hidden="true" tabindex="-1"></a>correlate mpg <span class="kw">weight</span>, <span class="kw">covariance</span> <span class="co">// Kovarianz</span></span></code></pre></div>
+<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
+
+
+(obs=74)
+
+             |      mpg   weight
+-------------+------------------
+         mpg |   33.472
+      weight | -3629.43   604030</code></pre>
+<p>Inwiefern ein linearer Zusammenhang besteht sollte immer auch graphisch beurteilt werden. Beispielsweise kannst du einen Scatter Plot zur Überprüfung der Linearitätsannahme erstellen, wie im Kapitel <a href="visualisierungen.html">Visualisierungen</a> dargestellt ist.</p>
+</div>
+<div id="t-test" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> t-test</h2>
+<ul>
+<li>Analog einer Versuchs- und Kontrollgruppenlogik lässt sich mit einem <em>t-test</em> der Frage nachgehen, ob die Unterschiede zwischen zwei Gruppen signifikant sind</li>
+<li>Hierbei gilt es eine Reihe an Anpassungen zu berücksichtigen. Inwiefern sich zwei unabhängige Gruppen hinsichtlich eines numerischen Outcomes unterscheiden, zeigt beispielsweise der nächste Output:</li>
+</ul>
+<div class="sourceCode" id="cb39"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb39-1"><a href="the-basics-of-data-analysis.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ttest</span> mpg, <span class="kw">by</span>(foreign)</span></code></pre></div>
+<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
+
+
+
+Two-sample t test with equal variances
+------------------------------------------------------------------------------
+   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+Domestic |      52    19.82692     .657777    4.743297    18.50638    21.14747
+ Foreign |      22    24.77273     1.40951    6.611187    21.84149    27.70396
+---------+--------------------------------------------------------------------
+combined |      74     21.2973    .6725511    5.785503     19.9569    22.63769
+---------+--------------------------------------------------------------------
+    diff |           -4.945804    1.362162               -7.661225   -2.230384
+------------------------------------------------------------------------------
+    diff = mean(Domestic) - mean(Foreign)                         t =  -3.6308
+Ho: diff = 0                                     degrees of freedom =       72
+
+    Ha: diff &lt; 0                 Ha: diff != 0                 Ha: diff &gt; 0
+ Pr(T &lt; t) = 0.0003         Pr(|T| &gt; |t|) = 0.0005          Pr(T &gt; t) = 0.9997</code></pre>
+</div>
+<div id="missing-values" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> <em>missing values</em></h2>
+<ul>
+<li><em>mvencode</em> ändert fehlende Werte in der angegebenen Variablenliste in numerische Werte</li>
+</ul>
+<div class="sourceCode" id="cb41"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb41-1"><a href="the-basics-of-data-analysis.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">mvdecode</span> <span class="dt">_all</span>, mv(999)</span></code></pre></div>
+<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
+
+        make: string variable ignored</code></pre>
+<ul>
+<li><em>missings report</em> zeigt eine Übersicht welche Variable fehlende Ausprägungen haben</li>
+<li>Der Befehl stammt aus dem <em>missings</em> Ado und muss <a href="the-basics.html#ados-installieren">installiert</a> werden</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb43-1"><a href="the-basics-of-data-analysis.html#cb43-1" aria-hidden="true" tabindex="-1"></a>missings <span class="kw">report</span></span></code></pre></div>
+<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
+
+
+
+Checking missings in all variables:
+5 observations with missing values
+
+-------------
+       |   #
+-------+-----
+ rep78 |   5
+-------------</code></pre>
+<ul>
+<li><em>missings list</em> gibt dir die einzelnen Fälle mit missing values aus, hier mit nur einem Missing da der Auto Datensatz sehr wenige Missings hat</li>
+</ul>
+<div class="sourceCode" id="cb45"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb45-1"><a href="the-basics-of-data-analysis.html#cb45-1" aria-hidden="true" tabindex="-1"></a>missings <span class="ot">list</span>, minimum(1)</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-preparation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linear-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": null,
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Stata and Paste.pdf"],
+"toc": {
+"collapse": "subsection"
+},
+"info": false
+});
+});
+</script>
+
+</body>
+
+</html>

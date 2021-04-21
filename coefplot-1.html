@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Coefplot | Stata and Paste?</title>
+  <meta name="description" content="Chapter 8 Coefplot | Stata and Paste?" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Coefplot | Stata and Paste?" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Coefplot | Stata and Paste?" />
+  
+  
+  
+
+<meta name="author" content="Edgar Treischl" />
+
+
+<meta name="date" content="2021-04-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualisierungen.html"/>
+
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    background-color: #ffffff;
+    color: #a0a0a0;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+div.sourceCode
+  { color: #1f1c1b; background-color: #ffffff; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span { color: #1f1c1b; } /* Normal */
+code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+code span.an { color: #ca60ca; } /* Annotation */
+code span.at { color: #0057ae; } /* Attribute */
+code span.bn { color: #b08000; } /* BaseN */
+code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #924c9d; } /* Char */
+code span.cn { color: #aa5500; } /* Constant */
+code span.co { color: #898887; } /* Comment */
+code span.cv { color: #0095ff; } /* CommentVar */
+code span.do { color: #607880; } /* Documentation */
+code span.dt { color: #0057ae; } /* DataType */
+code span.dv { color: #b08000; } /* DecVal */
+code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+code span.fl { color: #b08000; } /* Float */
+code span.fu { color: #644a9b; } /* Function */
+code span.im { color: #ff5500; } /* Import */
+code span.in { color: #b08000; } /* Information */
+code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+code span.op { color: #1f1c1b; } /* Operator */
+code span.ot { color: #006e28; } /* Other */
+code span.pp { color: #006e28; } /* Preprocessor */
+code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+code span.sc { color: #3daee9; } /* SpecialChar */
+code span.ss { color: #ff5500; } /* SpecialString */
+code span.st { color: #bf0303; } /* String */
+code span.va { color: #0057ae; } /* Variable */
+code span.vs { color: #bf0303; } /* VerbatimString */
+code span.wa { color: #bf0303; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="css/stylePR.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html">Stata and Paste</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="the-basics.html"><a href="the-basics.html"><i class="fa fa-check"></i><b>2</b> The Basics</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-basics.html"><a href="the-basics.html#use-and-describe"><i class="fa fa-check"></i><b>2.1</b> <em>use</em> and <em>describe</em></a></li>
+<li class="chapter" data-level="2.2" data-path="the-basics.html"><a href="the-basics.html#sysuse"><i class="fa fa-check"></i><b>2.2</b> <em>(sys)use</em></a></li>
+<li class="chapter" data-level="2.3" data-path="the-basics.html"><a href="the-basics.html#list"><i class="fa fa-check"></i><b>2.3</b> list</a></li>
+<li class="chapter" data-level="2.4" data-path="the-basics.html"><a href="the-basics.html#order"><i class="fa fa-check"></i><b>2.4</b> order</a></li>
+<li class="chapter" data-level="2.5" data-path="the-basics.html"><a href="the-basics.html#tab"><i class="fa fa-check"></i><b>2.5</b> <em>tab</em></a></li>
+<li class="chapter" data-level="2.6" data-path="the-basics.html"><a href="the-basics.html#ados-installieren"><i class="fa fa-check"></i><b>2.6</b> Ados installieren</a></li>
+<li class="chapter" data-level="2.7" data-path="the-basics.html"><a href="the-basics.html#pfad-angebenfinden"><i class="fa fa-check"></i><b>2.7</b> Pfad angeben/finden</a></li>
+<li class="chapter" data-level="2.8" data-path="the-basics.html"><a href="the-basics.html#display-keep-save-edit"><i class="fa fa-check"></i><b>2.8</b> <em>display</em>, <em>keep</em>, <em>save</em>, <em>edit</em></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-preparation.html"><a href="data-preparation.html"><i class="fa fa-check"></i><b>3</b> Data Preparation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="data-preparation.html"><a href="data-preparation.html#recode"><i class="fa fa-check"></i><b>3.1</b> <em>recode</em></a></li>
+<li class="chapter" data-level="3.2" data-path="data-preparation.html"><a href="data-preparation.html#generate-und-replace"><i class="fa fa-check"></i><b>3.2</b> <em>generate</em> und <em>replace</em></a></li>
+<li class="chapter" data-level="3.3" data-path="data-preparation.html"><a href="data-preparation.html#egen"><i class="fa fa-check"></i><b>3.3</b> <em>egen</em></a></li>
+<li class="chapter" data-level="3.4" data-path="data-preparation.html"><a href="data-preparation.html#label"><i class="fa fa-check"></i><b>3.4</b> <em>label</em></a></li>
+<li class="chapter" data-level="3.5" data-path="data-preparation.html"><a href="data-preparation.html#mathematische-transformationen"><i class="fa fa-check"></i><b>3.5</b> Mathematische Transformationen</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html"><i class="fa fa-check"></i><b>4</b> The Basics of Data Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html#summarize"><i class="fa fa-check"></i><b>4.1</b> <em>summarize</em></a></li>
+<li class="chapter" data-level="4.2" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html#correlation"><i class="fa fa-check"></i><b>4.2</b> <em>correlation</em></a></li>
+<li class="chapter" data-level="4.3" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html#t-test"><i class="fa fa-check"></i><b>4.3</b> t-test</a></li>
+<li class="chapter" data-level="4.4" data-path="the-basics-of-data-analysis.html"><a href="the-basics-of-data-analysis.html#missing-values"><i class="fa fa-check"></i><b>4.4</b> <em>missing values</em></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="linear-regression.html"><a href="linear-regression.html"><i class="fa fa-check"></i><b>5</b> Linear Regression</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="linear-regression.html"><a href="linear-regression.html#regress"><i class="fa fa-check"></i><b>5.1</b> regress</a></li>
+<li class="chapter" data-level="5.2" data-path="linear-regression.html"><a href="linear-regression.html#vorhersagen-per-hand"><i class="fa fa-check"></i><b>5.2</b> Vorhersagen per Hand</a></li>
+<li class="chapter" data-level="5.3" data-path="linear-regression.html"><a href="linear-regression.html#esttab"><i class="fa fa-check"></i><b>5.3</b> esttab</a></li>
+<li class="chapter" data-level="5.4" data-path="linear-regression.html"><a href="linear-regression.html#coefplot"><i class="fa fa-check"></i><b>5.4</b> coefplot</a></li>
+<li class="chapter" data-level="5.5" data-path="linear-regression.html"><a href="linear-regression.html#interaktionen"><i class="fa fa-check"></i><b>5.5</b> Interaktionen (##)</a></li>
+<li class="chapter" data-level="5.6" data-path="linear-regression.html"><a href="linear-regression.html#log-modelle-lin-log"><i class="fa fa-check"></i><b>5.6</b> Log Modelle: Lin-Log</a></li>
+<li class="chapter" data-level="5.7" data-path="linear-regression.html"><a href="linear-regression.html#log-lin"><i class="fa fa-check"></i><b>5.7</b> Log-Lin</a></li>
+<li class="chapter" data-level="5.8" data-path="linear-regression.html"><a href="linear-regression.html#log-log"><i class="fa fa-check"></i><b>5.8</b> Log-Log</a></li>
+<li class="chapter" data-level="5.9" data-path="linear-regression.html"><a href="linear-regression.html#optionen-robust"><i class="fa fa-check"></i><b>5.9</b> Optionen: robust</a></li>
+<li class="chapter" data-level="5.10" data-path="linear-regression.html"><a href="linear-regression.html#esample"><i class="fa fa-check"></i><b>5.10</b> e(sample)</a></li>
+<li class="chapter" data-level="5.11" data-path="linear-regression.html"><a href="linear-regression.html#ereturn-list"><i class="fa fa-check"></i><b>5.11</b> ereturn list</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="logistische-regression.html"><a href="logistische-regression.html"><i class="fa fa-check"></i><b>6</b> Logistische Regression</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="logistische-regression.html"><a href="logistische-regression.html#logit"><i class="fa fa-check"></i><b>6.1</b> logit</a></li>
+<li class="chapter" data-level="6.2" data-path="logistische-regression.html"><a href="logistische-regression.html#or"><i class="fa fa-check"></i><b>6.2</b> or</a></li>
+<li class="chapter" data-level="6.3" data-path="logistische-regression.html"><a href="logistische-regression.html#or-per-kreutabelle-berechnen"><i class="fa fa-check"></i><b>6.3</b> OR per Kreutabelle berechnen</a></li>
+<li class="chapter" data-level="6.4" data-path="logistische-regression.html"><a href="logistische-regression.html#margins"><i class="fa fa-check"></i><b>6.4</b> margins</a></li>
+<li class="chapter" data-level="6.5" data-path="logistische-regression.html"><a href="logistische-regression.html#lrtest"><i class="fa fa-check"></i><b>6.5</b> lrtest</a></li>
+<li class="chapter" data-level="6.6" data-path="logistische-regression.html"><a href="logistische-regression.html#fitstat"><i class="fa fa-check"></i><b>6.6</b> fitstat</a></li>
+<li class="chapter" data-level="6.7" data-path="logistische-regression.html"><a href="logistische-regression.html#classification"><i class="fa fa-check"></i><b>6.7</b> classification</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualisierungen.html"><a href="visualisierungen.html"><i class="fa fa-check"></i><b>7</b> Visualisierungen</a>
+<ul>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#histogramm"><i class="fa fa-check"></i>Histogramm</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#gladder"><i class="fa fa-check"></i>Gladder</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#box-plot"><i class="fa fa-check"></i>Box-Plot</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#bar-graph"><i class="fa fa-check"></i>Bar graph</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#ci-bar"><i class="fa fa-check"></i>CI Bar</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#scatter-plot"><i class="fa fa-check"></i>Scatter plot</a></li>
+<li class="chapter" data-level="" data-path="visualisierungen.html"><a href="visualisierungen.html#many-more-options"><i class="fa fa-check"></i>Many more options</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="coefplot-1.html"><a href="coefplot-1.html"><i class="fa fa-check"></i><b>8</b> Coefplot</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="coefplot-1.html"><a href="coefplot-1.html#sort-and-order"><i class="fa fa-check"></i><b>8.1</b> Sort and order</a></li>
+<li class="chapter" data-level="8.2" data-path="coefplot-1.html"><a href="coefplot-1.html#modellvergleiche"><i class="fa fa-check"></i><b>8.2</b> Modellvergleiche</a></li>
+<li class="chapter" data-level="8.3" data-path="coefplot-1.html"><a href="coefplot-1.html#further-ado"><i class="fa fa-check"></i><b>8.3</b> Further ado</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stata and Paste?</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="coefplot-1" class="section level1" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Coefplot</h1>
+<p>In Stata wird zumeist <em>Coefplot</em>, ein Ado von <a href="http://repec.sowi.unibe.ch/stata/coefplot/index.html" target="blank">Ben Jann</a> genutzt, um die Punktschätzer der Regression zu visualisieren, also die Koeffizienten zu plotten. Du musst also erst das Ado installieren, wenn du noch nie Coefplot genutzt hast:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb103-1"><a href="coefplot-1.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ssc</span> install coefplot, <span class="kw">replace</span></span></code></pre></div>
+<p>Coefplot ist ziemlich easy aufgebaut, nutze einfach den <code>coefplot</code> Befehl und die Punktschätzer der letzten berechneten Regression (oder eines anderen multivariaten Verfahrens) zu visualisieren.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb104-1"><a href="coefplot-1.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
+<span id="cb104-2"><a href="coefplot-1.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">regress</span> price mpg trunk <span class="fu">length</span> turn</span>
+<span id="cb104-3"><a href="coefplot-1.html#cb104-3" aria-hidden="true" tabindex="-1"></a>coefplot</span></code></pre></div>
+<p><img src="images/coefplot1.png" style="width:90.0%" /></p>
+<ul>
+<li><p>Wie die Abbildung zeigt, macht es häufig keinen Sinn, die Konstante zu visualieren, da es sonst so aussieht, als ob die Punktschätzer der einzelnen Variablen gar keinen Effekt haben (und häufig sind wir ja nicht an der Konstante interessiert)</p></li>
+<li><p>Mit <code>drop(_cons)</code> wird die Konstante (oder auch andere Variablen wenn du die Variablenname hinzufügst) aus dem Coefplot ausgeschlossen</p></li>
+<li><p><code>xline(0)</code> definiert wo die Markierungslinie sein soll. Hier sind wir daran interessiert, ob das Konfidenzinterval des Punktschätzers die Null beinhaltet, so erkennen wir auf den ersten Blick, ob ein Koeffizient signifikant ist</p></li>
+</ul>
+<div class="sourceCode" id="cb105"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb105-1"><a href="coefplot-1.html#cb105-1" aria-hidden="true" tabindex="-1"></a>coefplot, <span class="kw">drop</span>(<span class="dt">_cons</span>) <span class="bn">xline</span>(0)</span></code></pre></div>
+<p><img src="images/coefplot2.png" style="width:90.0%" /></p>
+<ul>
+<li>Sollen andere Koeffizient visualisiert werden, kann es sein, dass Anpassungen an den Standardbefehl vorgenommen werden müssen</li>
+<li>Beim Logit können wir mit <code>eform</code> die Odds Ratios anstelle der Logit Koeffizient visualisieren</li>
+<li>Zur leichteren Interpretation setzen wir die Markierungslinie mit <code>xline(1)</code> auf 1</li>
+</ul>
+<div class="sourceCode" id="cb106"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb106-1"><a href="coefplot-1.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">logit</span> foreign mpg trunk <span class="fu">length</span> turn</span>
+<span id="cb106-2"><a href="coefplot-1.html#cb106-2" aria-hidden="true" tabindex="-1"></a>coefplot, <span class="kw">drop</span>(<span class="dt">_cons</span>) <span class="bn">xline</span>(1) <span class="kw">eform</span> <span class="bn">xtitle</span>(Odds <span class="kw">ratio</span>)</span></code></pre></div>
+<p><img src="images/coefplot3.png" style="width:90.0%" /></p>
+<div id="sort-and-order" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Sort and order</h2>
+<p>Zur leichteren Interpretation kann es auch hilfreich sein, Variablen neu zu ordnen, beispielsweise alphabetisch:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb107-1"><a href="coefplot-1.html#cb107-1" aria-hidden="true" tabindex="-1"></a>coefplot, <span class="kw">drop</span>(<span class="dt">_cons</span>) <span class="bn">xline</span>(0) <span class="co">///</span></span>
+<span id="cb107-2"><a href="coefplot-1.html#cb107-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">order</span>(<span class="fu">length</span> mpg t*)</span></code></pre></div>
+<p><img src="images/coefplot4.png" style="width:90.0%" /></p>
+<p>Nach der Größe der Effekte, in aufsteigender oder absteigender (<code>descending</code>) Reihenfolge:</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb108-1"><a href="coefplot-1.html#cb108-1" aria-hidden="true" tabindex="-1"></a>*Absteigend mit</span>
+<span id="cb108-2"><a href="coefplot-1.html#cb108-2" aria-hidden="true" tabindex="-1"></a>*coefplot, <span class="kw">sort</span>(, descending) <span class="kw">drop</span>(<span class="dt">_cons</span>) </span>
+<span id="cb108-3"><a href="coefplot-1.html#cb108-3" aria-hidden="true" tabindex="-1"></a>*Aufsteigend:</span>
+<span id="cb108-4"><a href="coefplot-1.html#cb108-4" aria-hidden="true" tabindex="-1"></a>coefplot, <span class="kw">sort</span> <span class="kw">drop</span>(<span class="dt">_cons</span>) </span></code></pre></div>
+<p>Oder auch nach dem Standardfehler der Koeffizienten:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb109-1"><a href="coefplot-1.html#cb109-1" aria-hidden="true" tabindex="-1"></a>coefplot, <span class="kw">sort</span>(, <span class="kw">by</span>(se)) <span class="kw">drop</span>(<span class="dt">_cons</span>) </span></code></pre></div>
+<p><img src="images/coefplot5.png" style="width:90.0%" /></p>
+</div>
+<div id="modellvergleiche" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> Modellvergleiche</h2>
+<p>Graphische Verfahren sind besonder gut geeignet, um Modelle miteinander zu vergleichen. Hierfür werden die Modelle zuerst gespeichert. Beispielsweise <em>estimates store m1</em> speichert das erste Model unter dem Namen <code>m1</code>.</p>
+<p>Alle gespeicherten Modelle werden sodann dem Coefplot Befehl hinzugefügt:</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb110-1"><a href="coefplot-1.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">regress</span> price mpg trunk <span class="fu">length</span> turn <span class="kw">if</span> foreign==0</span>
+<span id="cb110-2"><a href="coefplot-1.html#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="kw">estimates</span> <span class="kw">store</span> m1</span>
+<span id="cb110-3"><a href="coefplot-1.html#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">regress</span> price mpg trunk <span class="fu">length</span> turn <span class="kw">if</span> foreign==1</span>
+<span id="cb110-4"><a href="coefplot-1.html#cb110-4" aria-hidden="true" tabindex="-1"></a><span class="kw">estimates</span> <span class="kw">store</span> m2</span>
+<span id="cb110-5"><a href="coefplot-1.html#cb110-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb110-6"><a href="coefplot-1.html#cb110-6" aria-hidden="true" tabindex="-1"></a>coefplot m1 m2, <span class="kw">drop</span>(<span class="dt">_cons</span>) <span class="bn">xline</span>(0)</span></code></pre></div>
+<p><img src="images/coefplot6.png" style="width:90.0%" /></p>
+<p>Oder wir erstellen Subplots für unsere Modelle durch die Listung mit <code>||</code>. Mit dem Befehl <code>bylabel(Name)</code> geben wir den Modellen noch einen einschlagigen Namen.</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb111-1"><a href="coefplot-1.html#cb111-1" aria-hidden="true" tabindex="-1"></a>coefplot m1, bylabel(Domestic Cars) <span class="co">///</span></span>
+<span id="cb111-2"><a href="coefplot-1.html#cb111-2" aria-hidden="true" tabindex="-1"></a>    || m2, bylabel(Foreign Cars)  <span class="co">///</span></span>
+<span id="cb111-3"><a href="coefplot-1.html#cb111-3" aria-hidden="true" tabindex="-1"></a>    ||, <span class="kw">drop</span>(<span class="dt">_cons</span>) <span class="bn">xline</span>(0)</span></code></pre></div>
+<p><img src="images/coefplot7.png" style="width:90.0%" /></p>
+</div>
+<div id="further-ado" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> Further ado</h2>
+<p>Für eine Präsentation oder Abschlussarbeit lassen sich natürlich noch weitere graphische Aspekte anpassen:</p>
+<ul>
+<li><code>lcolor</code>: Farbe der Markierungslinie</li>
+<li><code>mcolor</code> und <code>msymbol</code> für die Farbe und das Symbol der Marker</li>
+<li>Labels der X Achse (<code>xtitle</code>) oder des Titel der Grafik (<code>title</code>)</li>
+</ul>
+<div class="sourceCode" id="cb112"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb112-1"><a href="coefplot-1.html#cb112-1" aria-hidden="true" tabindex="-1"></a>coefplot (m1, pstyle(p2)), <span class="kw">drop</span>(<span class="dt">_cons</span>) <span class="co">///</span></span>
+<span id="cb112-2"><a href="coefplot-1.html#cb112-2" aria-hidden="true" tabindex="-1"></a>    <span class="bn">xline</span>(0, lcolor(<span class="bn">black</span>)) <span class="co">///</span></span>
+<span id="cb112-3"><a href="coefplot-1.html#cb112-3" aria-hidden="true" tabindex="-1"></a>    mcolor(<span class="kw">red</span>) <span class="bn">msymbol</span>(D) <span class="co">///</span></span>
+<span id="cb112-4"><a href="coefplot-1.html#cb112-4" aria-hidden="true" tabindex="-1"></a>    <span class="bn">xtitle</span>(Effect <span class="kw">on</span> price) <span class="co">/// </span></span>
+<span id="cb112-5"><a href="coefplot-1.html#cb112-5" aria-hidden="true" tabindex="-1"></a>    <span class="bn">title</span>(<span class="st">&quot;Some Titel&quot;</span>)</span></code></pre></div>
+<p><img src="images/coefplot8.png" style="width:90.0%" /></p>
+<p>Ebenso können <code>headings</code> eingebaut werden, beispielweise um Haupteffekte von Interaktioneffekten graphisch zu trennen. Oder, wie im nächsten Beispiel, um einen Haupteffekt von einer Reihe an Kontrollvariablen graphisch zu trennen.</p>
+<p>Die Headings könnnen dabei direkt an der Stelle der Variablen oder an der Stelle der jeweiligen Ausprägung einer Variable (wie bei <code>0.foreign</code>) ausgegeben werden. Mit <code>omitted baselevels</code> wird die Ausgabe der Referenzkategorie unterdrückt.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb113-1"><a href="coefplot-1.html#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">regress</span> price mpg trunk <span class="fu">length</span> turn i.foreign</span>
+<span id="cb113-2"><a href="coefplot-1.html#cb113-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb113-3"><a href="coefplot-1.html#cb113-3" aria-hidden="true" tabindex="-1"></a>coefplot, <span class="bn">xline</span>(0) omitted baselevels <span class="kw">drop</span>(<span class="dt">_cons</span>) <span class="co">///</span></span>
+<span id="cb113-4"><a href="coefplot-1.html#cb113-4" aria-hidden="true" tabindex="-1"></a>    headings(trunk = <span class="st">&quot;{bf:Control Variables}&quot;</span> <span class="co">///</span></span>
+<span id="cb113-5"><a href="coefplot-1.html#cb113-5" aria-hidden="true" tabindex="-1"></a>    0.foreign = <span class="st">&quot;{bf:Car Type}&quot;</span>)    </span></code></pre></div>
+<p><img src="images/coefplot9.png" style="width:90.0%" /></p>
+<p>Nicht das passende gefunden? Wahrscheinlich wirst du auf der Homepage von <a href="http://repec.sowi.unibe.ch/stata/coefplot/index.html" target="blank">Ben Jann</a> fündig, dort findet sich eine Vielzahl an Anpassungsmöglichkeiten, hier waren nur einige der wichtigsten Punkte aufgeführt.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualisierungen.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": null,
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Stata and Paste.pdf"],
+"toc": {
+"collapse": "subsection"
+},
+"info": false
+});
+});
+</script>
+
+</body>
+
+</html>

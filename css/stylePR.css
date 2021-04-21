@@ -1,0 +1,158 @@
+/* Special text */
+.advert {
+  color: #1653af;
+  font-style: italic;
+}
+.codecommand, .codebox code {
+  background-color:ghostwhite ;
+  font-family: monospace;
+}
+.Large {
+  font-size: 2rem;
+}
+.exercise, .exo {
+  color: #00BA10;
+  font-size: 1.1rem;
+}
+.math.inline {
+    background-color: aliceblue;
+}
+
+/* Special backgrounds*/
+.blueShaded {
+  background-color: ghostwhite;
+  font-family: monospace;
+}
+.blueShaded pre:not([class]) {
+  background-color: #D6E8F5;
+}
+.redbox {  
+  background-color: #FF7F7F;
+  padding: 2px 5px;
+}
+
+/* Document formatting*/
+body {
+  font-family: "Noto Sans", sans-serif; 
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+h3 {
+  font-style: italic;
+}
+
+/* Figures */
+.figure {
+  margin-bottom: 1.5em;
+}
+
+/* Custom specific to my bookdown template */
+.body-inner {
+/*  background-color: #1e73be;*/
+    background-color: #f6f6f6;
+} 
+.book .book-body .page-wrapper .page-inner {
+    max-width: 1025px;
+}
+.book .book-body .page-wrapper .page-inner section {
+    padding: 5px 3em;
+}
+.book .book-body .page-wrapper .page-inner section.normal p.caption {
+  margin: 0 10%;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.page-inner {
+        max-width: 1025px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        /* padding: 1em 30px 15px; */
+    }
+
+.book .book-body .navigation {
+    font-size: 70px;
+    color: #ccc;
+    text-align: center;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal a {
+    color: #1653af;
+}
+
+/* thinkr.css 
+.container-fluid.main-container {
+    margin-top: 80px;
+}
+h1.title {
+    margin-top: 80px;
+}
+.container-fluid.main-container h1.title {
+    margin-top: 0px;
+}
+*/
+.logos {
+    position: fixed;
+    top: 50px;
+    width: 100px;
+    left: 330px;
+    z-index: 1;
+}
+.logos img {
+    margin: 5px auto; /* Modified for gitbook */
+    display: block;
+    height: 60px;
+}
+a {
+    color: #0057AD;
+}
+h1 {
+    color: #0057AD;
+}
+h2 {
+    color: #0057AD;
+}
+
+/* Footer with logo */
+footer {
+    text-align: center;
+}
+footer img {
+    max-height: 40px;
+}
+
+
+/* -----------div tips------------- */
+
+  div.puzzle, div.fyi, div.demo, div.note {
+    padding: 1em;
+    margin: 1em 0;
+    padding-left: 100px;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    min-height: 120px;
+    color: #1f5386;
+    background-color: #bed3ec;
+    border: solid 5px #dfedff;
+  }
+  
+div.note {
+  background-image: url("Lightbulb.png");
+}
+
+/* 
+.fas. {
+  color : white;
+}
+
+.fas.fa-paperclip {
+  color : red;
+}
+
+
+
+*/ 
+
