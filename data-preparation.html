@@ -239,10 +239,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <span id="cb23-3"><a href="data-preparation.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">tab</span> foreign, nolab</span>
 <span id="cb23-4"><a href="data-preparation.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="kw">recode</span> foreign (0 = 1) (1 = 0), <span class="kw">gen</span>(foreign_recode)</span>
 <span id="cb23-5"><a href="data-preparation.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="kw">tab2</span> foreign foreign_recode</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-(1978 Automobile Data)
+<pre><code>(1978 Automobile Data)
 
 
    Car type |      Freq.     Percent        Cum.
@@ -289,11 +286,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <span id="cb25-2"><a href="data-preparation.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">replace</span> domestic = 0 <span class="kw">if</span> foreign == 1</span>
 <span id="cb25-3"><a href="data-preparation.html#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="data-preparation.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="kw">tab2</span> foreign domestic</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-
-(22 real changes made)
+<pre><code>(22 real changes made)
 
 
 -&gt; tabulation of foreign by domestic  
@@ -314,10 +307,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul>
 <div class="sourceCode" id="cb27"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb27-1"><a href="data-preparation.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">egen</span> mean_price = <span class="kw">mean</span>(price)</span>
 <span id="cb27-2"><a href="data-preparation.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="ot">list</span> mean_price <span class="kw">in</span> 1/4, <span class="kw">table</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-. egen mean_price = mean(price)
+<pre><code> . egen mean_price = mean(price)
 
 . list mean_price in 1/4, table
 
@@ -354,14 +344,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <span id="cb30-9"><a href="data-preparation.html#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-10"><a href="data-preparation.html#cb30-10" aria-hidden="true" tabindex="-1"></a>*Did it work?</span>
 <span id="cb30-11"><a href="data-preparation.html#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="kw">tab</span> domestic</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-
-
-
-
- Inländische Autos |      Freq.     Percent        Cum.
+<pre><code> Inländische Autos |      Freq.     Percent        Cum.
 -------------------+-----------------------------------
 Ausländische Autos |         22       29.73       29.73
  Inländische Autos |         52       70.27      100.00

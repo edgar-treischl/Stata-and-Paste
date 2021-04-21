@@ -236,10 +236,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb3-1"><a href="the-basics.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="st">&quot;https://www.stata-press.com/data/r16/titanic800&quot;</span>, <span class="kw">clear</span></span>
 <span id="cb3-2"><a href="the-basics.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">describe</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-(Titanic passenger survival (Extract))
+<pre><code>(Titanic passenger survival (Extract))
 
 
 Contains data from https://www.stata-press.com/data/r16/titanic800.dta
@@ -267,10 +264,7 @@ Sorted by: </code></pre>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb5-1"><a href="the-basics.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
 <span id="cb5-2"><a href="the-basics.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">des</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-(1978 Automobile Data)
+<pre><code>(1978 Automobile Data)
 
 
 Contains data from C:\PROGRA~1\Stata16\ado\base/a/auto.dta
@@ -304,10 +298,7 @@ Sorted by: foreign</code></pre>
 <li>List ist praktisch um zu überprüfen, ob die Datenaufbereitung geklappt hat</li>
 </ul>
 <div class="sourceCode" id="cb7"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb7-1"><a href="the-basics.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ot">list</span> make - headroom <span class="kw">in</span> 1/5, <span class="kw">table</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-. list make - headroom in 1/5, table
+<pre><code> . list make - headroom in 1/5, table
 
      +------------------------------------------------+
      | make            price   mpg   rep78   headroom |
@@ -328,10 +319,7 @@ Sorted by: foreign</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="the-basics.html#cb9-1" aria-hidden="true" tabindex="-1"></a>*Sortiere die Variable price Vor die Variable make</span>
 <span id="cb9-2"><a href="the-basics.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> price, before(make)</span>
 <span id="cb9-3"><a href="the-basics.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ot">list</span> price - headroom <span class="kw">in</span> 1/4, <span class="kw">table</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-. *Sortiere die Variable price Vor die Variable make
+<pre><code> . *Sortiere die Variable price Vor die Variable make
 . order price, before(make)
 
 . list price - headroom in 1/4, table
@@ -347,10 +335,7 @@ Sorted by: foreign</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb11-1"><a href="the-basics.html#cb11-1" aria-hidden="true" tabindex="-1"></a>*Oder danach</span>
 <span id="cb11-2"><a href="the-basics.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">order</span> price, after(make)</span>
 <span id="cb11-3"><a href="the-basics.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ot">list</span> make - headroom <span class="kw">in</span> 1/4, <span class="kw">table</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-. *Oder danach
+<pre><code> . *Oder danach
 . order price, after(make)
 
 . list make - headroom in 1/4, table
@@ -372,10 +357,7 @@ Sorted by: foreign</code></pre>
 <li>Mit <em>tab</em> können auch Dummy Variablen einfach erstellt werden</li>
 </ul>
 <div class="sourceCode" id="cb13"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb13-1"><a href="the-basics.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">tab</span> foreign</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-. tab foreign
+<pre><code> . tab foreign
 
    Car type |      Freq.     Percent        Cum.
 ------------+-----------------------------------
@@ -388,10 +370,7 @@ Sorted by: foreign</code></pre>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb15-1"><a href="the-basics.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">tab</span> rep78, <span class="kw">gen</span>(rep78_dummy_)</span>
 <span id="cb15-2"><a href="the-basics.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ot">list</span> rep78_dummy_1 - rep78_dummy_5 <span class="kw">in</span> 1/5</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-. tab rep78, gen(rep78_dummy_)
+<pre><code> . tab rep78, gen(rep78_dummy_)
 
      Repair |
 Record 1978 |      Freq.     Percent        Cum.

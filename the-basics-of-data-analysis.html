@@ -234,10 +234,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul>
 <div class="sourceCode" id="cb33"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb33-1"><a href="the-basics-of-data-analysis.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
 <span id="cb33-2"><a href="the-basics-of-data-analysis.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">summarize</span> mpg, <span class="kw">detail</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-(1978 Automobile Data)
+<pre><code>(1978 Automobile Data)
 
                         Mileage (mpg)
 -------------------------------------------------------------
@@ -261,7 +258,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li><em>pwcorr</em> berechnet einen Korrelationskoeffizient</li>
 </ul>
 <div class="sourceCode" id="cb35"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb35-1"><a href="the-basics-of-data-analysis.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">pwcorr</span> mpg <span class="kw">weight</span> , sig <span class="kw">star</span>(.05) <span class="co">// Korrelation auf dem 5%-Niveau signifikant </span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
+<pre><code>&gt; t 
 
              |      mpg   weight
 -------------+------------------
@@ -273,10 +270,7 @@ code span.wa { color: #bf0303; } /* Warning */
              |</code></pre>
 <p>Option <em>covariance</em> gibt die Kovarianz aus</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb37-1"><a href="the-basics-of-data-analysis.html#cb37-1" aria-hidden="true" tabindex="-1"></a>correlate mpg <span class="kw">weight</span>, <span class="kw">covariance</span> <span class="co">// Kovarianz</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-(obs=74)
+<pre><code>(obs=74)
 
              |      mpg   weight
 -------------+------------------
@@ -291,11 +285,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li>Hierbei gilt es eine Reihe an Anpassungen zu berücksichtigen. Inwiefern sich zwei unabhängige Gruppen hinsichtlich eines numerischen Outcomes unterscheiden, zeigt beispielsweise der nächste Output:</li>
 </ul>
 <div class="sourceCode" id="cb39"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb39-1"><a href="the-basics-of-data-analysis.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ttest</span> mpg, <span class="kw">by</span>(foreign)</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-
-Two-sample t test with equal variances
+<pre><code>Two-sample t test with equal variances
 ------------------------------------------------------------------------------
    Group |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
 ---------+--------------------------------------------------------------------
@@ -318,19 +308,13 @@ Ho: diff = 0                                     degrees of freedom =       72
 <li><em>mvencode</em> ändert fehlende Werte in der angegebenen Variablenliste in numerische Werte</li>
 </ul>
 <div class="sourceCode" id="cb41"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb41-1"><a href="the-basics-of-data-analysis.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">mvdecode</span> <span class="dt">_all</span>, mv(999)</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-        make: string variable ignored</code></pre>
+<pre><code>        make: string variable ignored</code></pre>
 <ul>
 <li><em>missings report</em> zeigt eine Übersicht welche Variable fehlende Ausprägungen haben</li>
 <li>Der Befehl stammt aus dem <em>missings</em> Ado und muss <a href="the-basics.html#ados-installieren">installiert</a> werden</li>
 </ul>
 <div class="sourceCode" id="cb43"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb43-1"><a href="the-basics-of-data-analysis.html#cb43-1" aria-hidden="true" tabindex="-1"></a>missings <span class="kw">report</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-
-Checking missings in all variables:
+<pre><code>Checking missings in all variables:
 5 observations with missing values
 
 -------------

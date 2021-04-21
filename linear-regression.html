@@ -234,10 +234,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul>
 <div class="sourceCode" id="cb46"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb46-1"><a href="linear-regression.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sysuse</span> auto, <span class="kw">clear</span></span>
 <span id="cb46-2"><a href="linear-regression.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> mpg <span class="kw">weight</span>  </span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-(1978 Automobile Data)
+<pre><code>(1978 Automobile Data)
 
       Source |       SS           df       MS      Number of obs   =        74
 -------------+----------------------------------   F(1, 72)        =    134.62
@@ -277,9 +274,7 @@ code span.wa { color: #bf0303; } /* Warning */
 </ul>
 <div class="sourceCode" id="cb49"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb49-1"><a href="linear-regression.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">regress</span> mpg <span class="kw">weight</span>  </span>
 <span id="cb49-2"><a href="linear-regression.html#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span>, coeflegend</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-      Source |       SS           df       MS      Number of obs   =        74
+<pre><code>      Source |       SS           df       MS      Number of obs   =        74
 -------------+----------------------------------   F(1, 72)        =    134.62
        Model |   1591.9902         1   1591.9902   Prob &gt; F        =    0.0000
     Residual |  851.469256        72  11.8259619   R-squared       =    0.6515
@@ -296,10 +291,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <li>Mit <em>display</em> können wir dann eine Vorhersage per Hand berechnen:</li>
 </ul>
 <div class="sourceCode" id="cb51"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb51-1"><a href="linear-regression.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">display</span> _b[<span class="dt">_cons</span>] + _b[<span class="kw">weight</span>] * 3019</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-21.300058</code></pre>
+<pre><code>21.300058</code></pre>
 </div>
 <div id="esttab" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> esttab</h2>
@@ -315,16 +307,7 @@ code span.wa { color: #bf0303; } /* Warning */
 <span id="cb53-4"><a href="linear-regression.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="kw">estimates</span> <span class="kw">store</span> model2</span>
 <span id="cb53-5"><a href="linear-regression.html#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-6"><a href="linear-regression.html#cb53-6" aria-hidden="true" tabindex="-1"></a>esttab model1 model2</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-
-
-
-
-
---------------------------------------------
-                      (1)             (2)   
+<pre><code>                      (1)             (2)   
                       mpg             mpg   
 --------------------------------------------
 weight           -0.00601***     -0.00375*  
@@ -385,9 +368,7 @@ t statistics in parentheses
 </ul>
 <div class="sourceCode" id="cb57"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb57-1"><a href="linear-regression.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> ln_weight = <span class="fu">ln</span>(<span class="kw">weight</span>)</span>
 <span id="cb57-2"><a href="linear-regression.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> mpg ln_weight  </span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-      Source |       SS           df       MS      Number of obs   =        74
+<pre><code>      Source |       SS           df       MS      Number of obs   =        74
 -------------+----------------------------------   F(1, 72)        =    147.33
        Model |  1641.35428         1  1641.35428   Prob &gt; F        =    0.0000
     Residual |  802.105178        72  11.1403497   R-squared       =    0.6717
@@ -411,9 +392,7 @@ t statistics in parentheses
 </ul>
 <div class="sourceCode" id="cb59"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb59-1"><a href="linear-regression.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> ln_mpg = <span class="fu">ln</span>(mpg)</span>
 <span id="cb59-2"><a href="linear-regression.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> ln_mpg <span class="kw">weight</span>  </span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-      Source |       SS           df       MS      Number of obs   =        74
+<pre><code>      Source |       SS           df       MS      Number of obs   =        74
 -------------+----------------------------------   F(1, 72)        =    179.26
        Model |  3.52530845         1  3.52530845   Prob &gt; F        =    0.0000
     Residual |   1.4159149        72  .019665485   R-squared       =    0.7134
@@ -436,9 +415,7 @@ t statistics in parentheses
 <li>UV und AV sind logarithmiert</li>
 </ul>
 <div class="sourceCode" id="cb61"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb61-1"><a href="linear-regression.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> ln_mpg ln_weight  </span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-      Source |       SS           df       MS      Number of obs   =        74
+<pre><code>      Source |       SS           df       MS      Number of obs   =        74
 -------------+----------------------------------   F(1, 72)        =    179.41
        Model |  3.52612925         1  3.52612925   Prob &gt; F        =    0.0000
     Residual |   1.4150941        72  .019654085   R-squared       =    0.7136
@@ -461,11 +438,7 @@ t statistics in parentheses
 <li>Robuste Standardfehler erhällt man durch die Option <code>vce(robust)</code></li>
 </ul>
 <div class="sourceCode" id="cb63"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb63-1"><a href="linear-regression.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> mpg <span class="kw">weight</span>, <span class="kw">vce</span>(<span class="kw">robust</span>)</span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-
-Linear regression                               Number of obs     =         74
+<pre><code>Linear regression                               Number of obs     =         74
                                                 F(1, 72)          =     105.83
                                                 Prob &gt; F          =     0.0000
                                                 R-squared         =     0.6515
@@ -491,8 +464,7 @@ Linear regression                               Number of obs     =         74
 <span id="cb65-3"><a href="linear-regression.html#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-4"><a href="linear-regression.html#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">regress</span> mpg <span class="kw">weight</span> <span class="kw">if</span> <span class="kw">sample</span> == 1 </span>
 <span id="cb65-5"><a href="linear-regression.html#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="kw">quietly</span> <span class="kw">regress</span> mpg <span class="kw">weight</span> headroom trunk <span class="fu">length</span> turn <span class="kw">if</span> <span class="kw">sample</span> == 1 </span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-</code></pre>
+<pre><code></code></pre>
 </div>
 <div id="ereturn-list" class="section level2" number="5.11">
 <h2><span class="header-section-number">5.11</span> ereturn list</h2>
@@ -500,11 +472,7 @@ Linear regression                               Number of obs     =         74
 <li><em>ereturn list</em> zeigt, welche Terme Stata bei der Regression berechnet hat und wie die einzelnen Terme intern heißen</li>
 </ul>
 <div class="sourceCode" id="cb67"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb67-1"><a href="linear-regression.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ereturn</span> <span class="ot">list</span></span></code></pre></div>
-<pre><code>Running C:\Users\gu99mywo\Dropbox\Lehre\NotShared_FAU\EMS\Stata_Paste_BD\pro&gt; e.do ...
-
-
-
-scalars:
+<pre><code>scalars:
                   e(N) =  74
                e(df_m) =  5
                e(df_r) =  68
